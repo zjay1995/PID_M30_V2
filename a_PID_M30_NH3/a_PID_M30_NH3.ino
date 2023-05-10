@@ -334,6 +334,8 @@ void setup() {
   g_timeSync.initTimeFromRTC();
   int range = EEPROM.read(132);
   g_range.selectRangeByIndex(1);
+  EEPROM.writeInt(162, 1);
+  EEPROM.commit();
   int alarm = EEPROM.read(162);
   g_alarm.selectAlarmByIndex(alarm);
 }
