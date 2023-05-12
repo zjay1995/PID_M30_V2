@@ -38,38 +38,42 @@ void ConfigurationManager::loadFromEEPROM()
 
     // SLOPE
 	double slope = -1;
-	slope = EEPROM.readDouble(EEPROM_GAS_SLOPE_OFFSET);
-	if(slope != -1)
+	//slope = EEPROM.readDouble(EEPROM_GAS_SLOPE_OFFSET);
+    slope = 10;
+
+    if(slope != -1)
 		notifyParamChanged(c_SLOPE_PARAM_NAME, String(slope));
 	Serial.println("config: slope: " + String(slope));
 	// INTERCEPT
 	double intercept = -1;
-	intercept = EEPROM.readDouble(EEPROM_GAS_INTERCEPT_OFFSET);		
-	if(intercept != -1)
+//	intercept = EEPROM.readDouble(EEPROM_GAS_INTERCEPT_OFFSET);
+    intercept = 10;
+
+    if(intercept != -1)
 		notifyParamChanged(c_INTERCEPT_PARAM_NAME, String(intercept));
 	Serial.println("config: intercept: " + String(intercept));
 
     double intercept2 = -1;
-    intercept2 = EEPROM.readDouble(EEPROM_GAS_INTERCEPT_OFFSET);
+    intercept2 = 10;
     if(intercept2 != -1)
         notifyParamChanged(c_INTERCEPT2_PARAM_NAME, String(intercept2));
     Serial.println("config: intercept2: " + String(intercept2));
 
     double intercept3 = -1;
-    intercept3 = EEPROM.readDouble(EEPROM_GAS_INTERCEPT_OFFSET);
+    intercept3 = 10;
     if(intercept3 != -1)
         notifyParamChanged(c_INTERCEPT3_PARAM_NAME, String(intercept3));
     Serial.println("config: intercept3: " + String(intercept3));
 
     double intercept4 = -1;
-    intercept4 = EEPROM.readDouble(EEPROM_GAS_INTERCEPT_OFFSET);
+    intercept4 = 10;
     if(intercept4 != -1)
         notifyParamChanged(c_INTERCEPT4_PARAM_NAME, String(intercept4));
     Serial.println("config: intercept4: " + String(intercept4));
 
 	//secondP
     double secondp = -1;
-    secondp = EEPROM.readDouble(EEPROM_GAS_SECONDP_OFFSET);
+    secondp = 10;
     if(secondp != -1)
         notifyParamChanged(c_SECONDP_PARAM_NAME, String(secondp));
     Serial.println("config: secondp: " + String(secondp));
@@ -77,19 +81,19 @@ void ConfigurationManager::loadFromEEPROM()
 
     //secondp2
     double secondp2 = -1;
-    secondp2 = EEPROM.readDouble(EEPROM_GAS_SECONDP2_OFFSET);
+    secondp2 = 10;
     if(secondp2 != -1)
         notifyParamChanged(c_SECONDP2_PARAM_NAME, String(secondp2));
     Serial.println("config: secondp2: " + String(secondp2));
 
     double secondp3 = -1;
-    secondp3 = EEPROM.readDouble(EEPROM_GAS_SECONDP3_OFFSET);
+    secondp3 = 10;
     if(secondp3 != -1)
         notifyParamChanged(c_SECONDP3_PARAM_NAME, String(secondp3));
     Serial.println("config: secondp3: " + String(secondp3));
 
     double secondp4 = -1;
-    secondp4 = EEPROM.readDouble(EEPROM_GAS_SECONDP4_OFFSET);
+    secondp4 = 10;
     if(secondp4 != -1)
         notifyParamChanged(c_SECONDP4_PARAM_NAME, String(secondp4));
     Serial.println("config: secondp4: " + String(secondp4));
@@ -99,37 +103,37 @@ void ConfigurationManager::loadFromEEPROM()
 	*/
 
 	double AirTC = -1;
-	AirTC =	EEPROM.readDouble(EEPROM_GAS_AIR_TC_OFFSET);
+	AirTC =	10;
 	if(AirTC != -1)
 		notifyParamChanged(c_GAS_AIR_PARAM_NAME, String(AirTC));
 	Serial.println("config: Air TC: " + String(AirTC));
 	
 	double O2TC = -1;
-	O2TC = EEPROM.readDouble(EEPROM_GAS_O2_TC_OFFSET);
+	O2TC = 10;
 	if(O2TC != -1)
 		notifyParamChanged(c_GAS_O2_PARAM_NAME, String(O2TC));
 	Serial.println("config: O2 TC: " + String(O2TC));		
 	
 	double N2TC = -1;
-	N2TC = EEPROM.readDouble(EEPROM_GAS_N2_TC_OFFSET);	
+	N2TC = 10;
 	if(N2TC != -1)
 		notifyParamChanged(c_GAS_N2_PARAM_NAME, String(N2TC));
 	Serial.println("config: N2 TC: " + String(N2TC));
 	
 	double HeTC = -1;
-	HeTC = EEPROM.readDouble(EEPROM_GAS_He_TC_OFFSET);
+	HeTC = 10;
 	if(HeTC != -1)
 		notifyParamChanged(c_GAS_He_PARAM_NAME, String(HeTC));
 	Serial.println("config: He TC: " + String(HeTC));
 	
 	double H2TC = -1;
-	H2TC = EEPROM.readDouble(EEPROM_GAS_H2_TC_OFFSET);		
+	H2TC = 10;
 	if(H2TC != -1)
 		notifyParamChanged(c_GAS_H2_PARAM_NAME, String(H2TC));
 	Serial.println("config: H2 TC: " + String(H2TC));
 	
 	double ArCH4TC = -1;
-	ArCH4TC = EEPROM.readDouble(EEPROM_GAS_ArCH4_TC_OFFSET);		
+	ArCH4TC = 10;
 	if(ArCH4TC != -1)
 		notifyParamChanged(c_GAS_ARCH4_PARAM_NAME, String(ArCH4TC));
 	Serial.println("config: ArCH4 TC: " + String(ArCH4TC));
