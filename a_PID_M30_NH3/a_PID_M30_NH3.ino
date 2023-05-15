@@ -101,7 +101,9 @@ void setup() {
   Serial.println("PID M30 v230304");
   // DEEP-SLEEP init
   pinMode(25, OUTPUT);
-  EEPROM.writeInt(80, 1);
+  EEPROM.writeInt(80, 0);
+               EEPROM.commit();
+
   //esp_sleep_enable_ext1_wakeup(0x8004, ESP_EXT1_WAKEUP_ANY_HIGH);
   esp_sleep_enable_ext0_wakeup(GPIO_NUM_12, LOW);
   // ADC
