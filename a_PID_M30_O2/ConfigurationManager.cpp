@@ -32,7 +32,7 @@ void ConfigurationManager::loadFromEEPROM()
     Serial.println("config: alarm: " + String(alarm));
     notifyParamChanged(c_ALARM_PARAM_NAME, String(alarm));
 
-    int gasIndex = EEPROM.readInt(80);
+    int gasIndex = 1;
     Serial.println("config: gas index: " + String(gasIndex));
     notifyParamChanged(c_GASINDEX_PARAM_NAME, String(gasIndex));
 
