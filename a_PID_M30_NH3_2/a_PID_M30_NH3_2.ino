@@ -251,8 +251,8 @@ void setup() {
   String label = "Cal Gas";
   calvalueMenus.push_back(new CalvalueMenuItem("0.1 ppm", label, 0, &g_calvalue, calvalueMenuRenderer));
 
-  for (int i = 1; i <= 10; i++) {
-    int ppm = i * 20;
+  for (int i = 1; i <= 200; i++) {
+    int ppm = i;
     calvalueMenus.push_back(new CalvalueMenuItem(String(ppm) + " ppm", label, i, &g_calvalue, calvalueMenuRenderer));
   }
 
