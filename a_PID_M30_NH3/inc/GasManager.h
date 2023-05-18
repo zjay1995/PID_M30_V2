@@ -260,7 +260,7 @@ public:
         }
         else if(param.equals(c_GASINDEX_PARAM_NAME))
         {
-            m_selectedGas = 0;
+            m_selectedGas = value.toDouble();
             Serial.println("Setting Gas_Index: " + value);
         }
         else
@@ -280,4 +280,3 @@ public:
 
 
 };
-

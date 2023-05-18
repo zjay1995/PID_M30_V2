@@ -115,7 +115,7 @@ void setup() {
   // Gas Manager
   g_gasManager.setConfigurationManager(&g_configurationManager);
 
-  //g_gasManager.addGas(Gas("NH3", 1.0));
+  g_gasManager.addGas(Gas("NH3", 1.0));
   g_gasManager.addGas(Gas("O2", 1.0));
   //g_gasManager.addGas(Gas("H2S", 1.0));
   //g_gasManager.addGas(Gas("CO", 5.73));
@@ -182,7 +182,7 @@ void setup() {
   vector<Menu*> gasMenus;
 
 
-  //gasMenus.push_back(new GasMenuItem("NH3", "LIBRARY",  0, &g_gasManager, gasMenuRenderer));
+  gasMenus.push_back(new GasMenuItem("NH3", "LIBRARY",  0, &g_gasManager, gasMenuRenderer));
   gasMenus.push_back(new GasMenuItem("O2", "LIBRARY", 1, &g_gasManager, gasMenuRenderer));
   //gasMenus.push_back(new GasMenuItem("H2S", "LIBRARY", 2, &g_gasManager, gasMenuRenderer));
   //gasMenus.push_back(new GasMenuItem("CO", "LIBRARY",  3, &g_gasManager, gasMenuRenderer));
@@ -251,8 +251,8 @@ void setup() {
   String label = "Cal Gas";
   calvalueMenus.push_back(new CalvalueMenuItem("0.1 ppm", label, 0, &g_calvalue, calvalueMenuRenderer));
 
-  for (int i = 1; i <= 200; i++) {
-    int ppm = i;
+  for (int i = 1; i <= 10; i++) {
+    int ppm = i * 20;
     calvalueMenus.push_back(new CalvalueMenuItem(String(ppm) + " ppm", label, i, &g_calvalue, calvalueMenuRenderer));
   }
 
