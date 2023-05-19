@@ -45,7 +45,7 @@ public:
 
         if(now - m_lastReadValueTick > 1000 / m_refreshRate)
         {
-            const int numReadings  = 2;
+            const int numReadings  = 4;
             long total  = 0;
             m_lastReadValueTick = now;
             const float multiplier = 0.125F; //GAIN 1
