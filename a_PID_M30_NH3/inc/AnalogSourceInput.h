@@ -6,14 +6,16 @@ class AnalogSourceInput
 {
 protected:
 
-    int 			m_refreshRate = 2; //refreshes per second
+    int 			m_refreshRate = 20; //refreshes per second
     unsigned long 	m_lastReadValueTick = -5000000;
     int 			m_refreshRate_b = 1; //refreshes per second
     unsigned long 	m_lastReadValueTick_b = -5000000;
     uint16_t 		m_lastReadValue;
     uint16_t 		m_lastReadValue_battery;
 
-
+    const int numReadings  = 10;
+    long total  = 0;
+    int readCount = 0;
 
 public:
 
@@ -45,16 +47,15 @@ public:
 
         if(now - m_lastReadValueTick > 1000 / m_refreshRate)
         {
-            const int numReadings  = 4;
-            long total  = 0;
             m_lastReadValueTick = now;
             const float multiplier = 0.125F; //GAIN 1
-
-            for (int i = 0; i<numReadings; i++) {
+            readCount += 1;
                 total = total +m_ads1115->readADC_SingleEnded(1) * multiplier;
-            }
-            m_lastReadValue = total / numReadings;
-
+                if(readCount == numReadings){
+                    m_lastReadValue = total / numReadings;
+                    readCount = 0;
+                    total = 0;
+                }
         }
         return m_lastReadValue;
     }
