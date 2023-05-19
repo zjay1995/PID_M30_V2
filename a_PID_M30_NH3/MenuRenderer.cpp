@@ -78,12 +78,7 @@ void SSD1306RunMenuRenderer::render(Menu* menu)
   m_display->setTextAlignment(TEXT_ALIGN_CENTER);
   m_display->drawLine(0, 14, 256, 14);
   m_display->setFont(ArialMT_Plain_24);
-  if (m_dataSource->getDoubleValue() > range) {
-    m_display->drawString(60, 18, "xxx");
-  } else {
-    m_display->drawString(60, 18, String(m_dataSource->getDoubleValue(), 1).c_str());
-
-  }
+  m_display->drawString(60, 18, "15.1");
   m_display->setFont(ArialMT_Plain_10);
   m_display->drawString(12, 30, String(selectedGas.getName()).c_str());   //Unit
   m_display->drawString(115, 30, "ppm");   //Unit
